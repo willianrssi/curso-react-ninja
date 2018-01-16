@@ -1,13 +1,12 @@
 'use strict'
 
 const map = (arr = [], func = (item) => item) => {
-  let newArr = []
+  return (function mapInternal (arrInternal, counter) {
+    let [head, ...tail] = arrInternal
 
-  arr.forEach((item, i, arr) => {
-    newArr.push(func(item, i, arr))
-  })
-
-  return newArr
+    return arrInternal.length === 0 ? []
+    : [func(head, counter++, arr),
+      ...mapInternal(tail, counter)]
+  })(arr, 0)
 }
-
 export default map
