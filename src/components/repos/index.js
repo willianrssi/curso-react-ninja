@@ -23,7 +23,8 @@ Repos.propTypes = {
 }
 
 Repos.defaultProps = {
-  className: ''
+  className: '',
+  repos: []
 }
 
 export default Repos
