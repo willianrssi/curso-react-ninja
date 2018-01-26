@@ -2,11 +2,11 @@
   "scripts": {
     "start": "node server.js",
     "test": "jest --coverage",
+    "test:watch": "yarn test -- --watch",
+    "lint": "standard --verbose | snazzy",
     "lint:watch": "gulp",
     "lint:fix": "standard --fix",
-    "lint": "standard --verbose | snazzy",
-    "test:watch": "yarn test -- --watch",
-    "build": "cross-env NODE_ENV=production webpack --progress --config webpack.prod.config -p",
+    "build": "cross-env NODE_ENV=production webpack --progress --config webpack/prod.config -p",
     "dashboard": "webpack-dashboard -- node server.js",
     "storybook": "start-storybook -p 6006 -c storybook",
     "build-storybook": "build-storybook -c storybook"
