@@ -13,7 +13,7 @@ const UserInfo = ({userinfo}) => (
       </a>
     </h1>
 
-    <ul>
+    <ul className='repos-info'>
       <li>Repositórios: {userinfo.repos}</li>
       <li>Seguidores: {userinfo.followers}</li>
       <li>Seguindo:{userinfo.following}</li>
