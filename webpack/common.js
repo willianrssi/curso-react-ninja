@@ -15,7 +15,7 @@ module.exports = {
 
   output: {
     path: paths.dist,
-    filename: '[name]-[hash].js'
+    filename: '[name]-[chunkhash].js'
   },
 
   htmlPluginConfig: {
@@ -28,7 +28,12 @@ module.exports = {
     test: /\.js$/,
     exclude: /node_modules/,
     include: paths.src,
-    use: 'standard-loader'
+    use: {
+      loader: 'standard-loader',
+      options: {
+        parser: 'babel-eslint'
+      }
+    }
   },
 
   jsLoader: {
