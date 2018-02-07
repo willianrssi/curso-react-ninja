@@ -1,6 +1,8 @@
 'use strict'
 
 import React, { Component } from 'react'
+import './css/style.css'
+
 // import Title from 'components/title'
 
 class App extends Component {

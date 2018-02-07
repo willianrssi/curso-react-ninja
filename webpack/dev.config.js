@@ -32,6 +32,8 @@ module.exports = {
     rules: [
       common.standardPreLoader,
       common.jsLoader,
+      common.fileLoader,
+      common.urlLoader,
       common.cssLoader
     ]
   },
