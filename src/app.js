@@ -9,34 +9,25 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      title: '...',
-      Component: 'div'
+      counter: 0
     }
   }
 
-  getTitle () {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve('My app with async/await')
-      }, 2000)
-    })
+  incrementCounter (state) {
+    return {counter: state.counter + 1}
   }
 
-  async componentDidMount () {
-    const title = await import('components/title')
-
-    try {
-      this.setState({
-        title: await this.getTitle(),
-        Component: title.default
-      })
-    } catch (error) {
-    }
+  componentDidMount () {
+    this.setState(this.incrementCounter)
+    this.setState(this.incrementCounter)
+    this.setState(this.incrementCounter)
+    this.setState(this.incrementCounter)
   }
 
   render () {
+    console.log('render:' + this.state.counter)
     return (
-      <this.state.Component>{this.state.title}</this.state.Component>
+      <div>counter: {this.state.counter}</div>
     )
   }
 }
