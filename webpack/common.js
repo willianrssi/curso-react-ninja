@@ -3,6 +3,8 @@
 const { join } = require('path')
 
 const paths = {
+  normalizeCss: join(__dirname, '..', 'node_modules', 'normalize.css'),
+  highlightCss: join(__dirname, '..', 'node_modules', 'highlight.js', 'styles'),
   root: join(__dirname, '..'),
   src: join(__dirname, '..', 'src'),
   dist: join(__dirname, '..', 'dist')
@@ -11,8 +13,9 @@ const paths = {
 module.exports = {
   paths,
 
-  entry: join(paths.src, 'index'),
-
+  entry: {
+    main: join(paths.src, 'index')
+  },
   output: {
     path: paths.dist,
     filename: '[name]-[chunkhash].js'
@@ -26,7 +29,6 @@ module.exports = {
   standardPreLoader: {
     enforce: 'pre',
     test: /\.js$/,
-    exclude: /node_modules/,
     include: paths.src,
     use: {
       loader: 'standard-loader',
@@ -38,15 +40,13 @@ module.exports = {
 
   jsLoader: {
     test: /\.js$/,
-    exclude: /node_modules/,
     include: paths.src,
     use: 'babel-loader'
   },
 
   cssLoader: {
     test: /\.css$/,
-    exclude: /node_modules/,
-    include: paths.src,
+    include: [paths.src, paths.normalizeCss, paths.highlightCss],
     use: ['style-loader', 'css-loader']
   },
 
@@ -79,7 +79,8 @@ module.exports = {
     alias: {
       src: paths.src,
       components: join(paths.src, 'components'),
-      utils: join(paths.src, 'utils')
+      utils: join(paths.src, 'utils'),
+      views: join(paths.src, 'views')
     }
   }
 }

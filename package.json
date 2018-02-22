@@ -1,12 +1,14 @@
 {
   "scripts": {
-    "start": "node server.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "node server.js",
     "test": "jest --coverage",
     "test:watch": "yarn test -- --watch",
     "lint": "standard --parser babel-eslint --verbose | snazzy",
     "lint:watch": "gulp",
     "lint:fix": "standard --fix",
-    "build": "cross-env NODE_ENV=production webpack --progress --config webpack/prod.config -p",
+    "build:analyzer": "cross-env ANALYZER=true yarn build",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production webpack --progress --config webpack/prod.config -p",
     "dashboard": "webpack-dashboard -- node server.js",
     "storybook": "start-storybook -p 6006 -c storybook",
     "build-storybook": "cross-env NODE_ENV=production build-storybook -c storybook",
@@ -24,13 +26,18 @@
     "babel-preset-stage-0": "^6.22.0",
     "chai": "^3.5.0",
     "clean-webpack-plugin": "0.1.15",
+    "compression": "^1.7.1",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
+    "express": "^4.16.2",
     "extract-text-webpack-plugin": "2.1.0",
     "file-loader": "^1.1.6",
     "gulp": "^3.9.1",
+    "highlight.js": "^9.12.0",
     "html-webpack-plugin": "^2.28.0",
     "jest-cli": "^18.1.0",
+    "marked": "^0.3.12",
+    "normalize.css": "^7.0.0",
     "react-hot-loader": "3.0.0-beta.6",
     "snazzy": "^6.0.0",
     "standard": "^8.6.0",
@@ -38,13 +45,17 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.6.2",
     "webpack": "^2.2.1",
+    "webpack-bundle-analyzer": "^2.10.0",
     "webpack-dashboard": "^0.3.0",
-    "webpack-dev-server": "^2.3.0"
+    "webpack-dev-server": "2.3.0"
   },
   "dependencies": {
     "babel-runtime": "^6.22.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "node-uuid": "^1.4.8",
+    "preact": "^8.2.7",
+    "preact-compat": "^3.18.0",
+    "react": "15.5.4",
+    "react-dom": "15.5.4"
   },
   "standard": {
     "globals": [
@@ -52,7 +63,8 @@
       "test",
       "it",
       "describe",
-      "import"
+      "import",
+      "localStorage"
     ]
   }
 }

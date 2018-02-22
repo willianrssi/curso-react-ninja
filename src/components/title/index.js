@@ -1,9 +1,0 @@
-'use strict'
-
-import React from 'react'
-import './title.css'
-
-const Title = ({ children }) => (
-  <h1>{children}</h1>
-)
-export default Title
