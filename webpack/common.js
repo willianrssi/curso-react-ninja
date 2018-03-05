@@ -41,7 +41,25 @@ module.exports = {
   jsLoader: {
     test: /\.js$/,
     include: paths.src,
-    use: 'babel-loader'
+    use: {
+      loader: 'babel-loader',
+      options: {
+        babelrc: false,
+        presets: [
+          ['env', { 'modules': false }],
+          'stage-0',
+          'react'
+        ],
+        plugins: [
+          'react-hot-loader/babel',
+          ['transform-runtime', {
+            'helpers': false,
+            'polyfill': false,
+            'regenerator': true
+          }]
+        ]
+      }
+    }
   },
 
   cssLoader: {
@@ -56,7 +74,7 @@ module.exports = {
     include: paths.src,
     use: {
       loader: 'file-loader',
-      query: {
+      options: {
         name: 'media/[name].[hash:8].[ext]'
       }
     }
@@ -68,7 +86,7 @@ module.exports = {
     include: paths.src,
     use: {
       loader: 'url-loader',
-      query: {
+      options: {
         limit: 10000,
         name: 'media/[name].[hash:8].[ext]'
       }
