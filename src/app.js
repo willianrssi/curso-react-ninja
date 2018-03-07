@@ -1,13 +1,11 @@
 'use strict'
 
-import React, { Component } from 'react'
-import Title from 'components/title'
+import React from 'react'
+import Counter from 'components/counter'
 
-class App extends Component {
-  render () {
-    return (
-      <div><Title>My App</Title></div>
-    )
-  }
-}
+const App = () => (
+  <Counter />
+
+)
+
 export default App
