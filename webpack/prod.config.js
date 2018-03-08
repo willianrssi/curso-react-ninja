@@ -57,7 +57,7 @@ module.exports = {
       sourceMap: true
     })
   ].concat(
-    process.env.ANALYZER ? new BundleAnalyzerPlugin() : [],
+    process.env.ANALYZER ? new BundleAnalyzerPlugin() : []
   ),
 
   module: {
