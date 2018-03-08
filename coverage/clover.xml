@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1520274436743" clover="3.2.0">
-  <project timestamp="1520274436743" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1">
-      <file name="index.js" path="D:\Users\Willian\Dropbox\Estudos\Udemy - React Ninja\src\components\title\index.js">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+<coverage generated="1520467962650" clover="3.2.0">
+  <project timestamp="1520467962650" name="All files">
+    <metrics statements="12" coveredstatements="8" conditionals="9" coveredconditionals="1" methods="4" coveredmethods="1" elements="25" coveredelements="10" complexity="0" loc="12" ncloc="12" packages="1" files="2" classes="2">
+      <file name="actions.js" path="D:\Users\Willian\Dropbox\Estudos\Udemy - React Ninja\src\redux-flow\reducers\counters\actions.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
+      </file>
+      <file name="index.js" path="D:\Users\Willian\Dropbox\Estudos\Udemy - React Ninja\src\redux-flow\reducers\counters\index.js">
+        <metrics statements="8" coveredstatements="4" conditionals="9" coveredconditionals="1" methods="4" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="10" type="cond" truecount="0" falsecount="4"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="17" count="10" type="stmt"/>
       </file>
     </metrics>
   </project>
