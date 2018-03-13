@@ -1,14 +1,16 @@
 'use strict'
 
-import React, { Component } from 'react'
-import Title from 'components/title'
-import './css/style.css'
+import React from 'react'
+import Form from 'components/form'
+import TodoList from 'components/todo-list'
+import Filter from 'components/filter'
 
-class App extends Component {
-  render () {
-    return (
-      <div><Title>My App</Title></div>
-    )
-  }
-}
+const App = () => (
+  <div>
+    <Form />
+    <TodoList />
+    <Filter />
+  </div>
+  )
+
 export default App
