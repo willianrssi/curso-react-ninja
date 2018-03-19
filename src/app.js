@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react'
 import Title from 'components/title'
-import './css/style.css'
-
+import 'milligram'
+import 'normalize.css'
 class App extends Component {
   render () {
     return (
